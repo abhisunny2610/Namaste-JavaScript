@@ -7,10 +7,18 @@ console.log(x)
 getName()
 console.log(getName)
 
+// console.log(hello())
+console.log(hello)
+
+
 var x = 7;
 
 function getName(){
     console.log("Abhishek Singh")
+}
+
+var hello  = () => {
+    console.log("Hello JavaScript")
 }
 
 // Variables defined with let and const are hoisted to the top of the block, but not initialized.
