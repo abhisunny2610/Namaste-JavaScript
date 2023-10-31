@@ -7,11 +7,11 @@
 
 */
 
-function x(){
+function x() {
     var a = 7
 
     // function y have a function x its lexical environment.
-    function y(){
+    function y() {
         console.log(a)
 
     }
@@ -20,11 +20,11 @@ function x(){
 
 x()
 
-function a(){
+function a() {
     var x = 7
 
     // function y have a function x its lexical environment.
-    function b(){
+    function b() {
         console.log(x)
 
     }
@@ -49,3 +49,51 @@ Uses of Closuers:
     - and many more...
 
 */
+
+function timeout() {
+    var name = "Abhishek"
+    setTimeout(function () {
+        console.log(name)
+    }, 3000)
+    console.log("Hello, What is your name ?")
+}
+
+timeout()
+
+// print 1 after 1 sec, 2 after 2sec, 3 after 3sec and soo on...
+
+// this solution is wrong.
+function print_with_time() {
+    for (var i = 1; i <= 5; i++) {
+        setTimeout(function () {
+            console.log(i)
+        }, i * 1000)
+    }
+}
+
+print_with_time()
+
+
+// this is correct solution
+function print_with_time2() {
+    for (let i = 1; i <= 5; i++) {
+        setTimeout(function () {
+            console.log(i)
+        }, i * 1000)
+    }
+}
+
+print_with_time2()
+
+// this is correct solution without using let
+function print_with_time3() {
+    for (var n = 1; n <= 5; n++) {
+        function close(d) {
+            setTimeout(function () {
+                console.log("3 example", d)
+            }, d * 1000)
+        }
+        close(n)
+    }
+}
+print_with_time3()
